@@ -1,0 +1,77 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  min-height: 100vh;
+  padding: 30px 16px;
+  color: #eee;
+}
+
+.container {
+  max-width: 780px;
+  margin: auto;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 { text-align: center; font-size: 2rem; margin-bottom: 28px; color: #e94560; }
+h2 { font-size: 1.3rem; margin-bottom: 16px; color: #a8dadc; }
+hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 28px 0; }
+
+/* Subject Row */
+.subject-row {
+  display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.subject-row input {
+  flex: 1; min-width: 100px; padding: 10px 12px;
+  border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08); color: #fff; font-size: 0.9rem;
+}
+.subject-row input::placeholder { color: #aaa; }
+.subject-row input:focus { outline: none; border-color: #e94560; }
+
+.remove-btn {
+  background: #e94560; border: none; color: white;
+  border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 1rem;
+}
+.remove-btn:hover { background: #c73652; }
+
+/* Semester Row (CGPA) */
+.semester-row {
+  display: flex; gap: 10px; margin-bottom: 10px; align-items: center;
+}
+.semester-row input {
+  flex: 1; padding: 10px 12px;
+  border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08); color: #fff; font-size: 0.9rem;
+}
+.semester-row input:focus { outline: none; border-color: #e94560; }
+.semester-row label { min-width: 130px; color: #ccc; font-size: 0.9rem; }
+
+/* Buttons */
+.btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+button {
+  padding: 10px 18px; border: none; border-radius: 8px;
+  cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: 0.2s;
+}
+button:not(.remove-btn) { background: #e94560; color: white; }
+button:not(.remove-btn):hover { background: #c73652; transform: translateY(-1px); }
+
+#add-to-cgpa-btn {
+  margin-top: 12px; background: #457b9d !important;
+}
+#add-to-cgpa-btn:hover { background: #1d3557 !important; }
+
+/* Result Box */
+.result-box {
+  margin-top: 16px; padding: 16px 20px;
+  border-radius: 10px; background: rgba(233,69,96,0.15);
+  border: 1px solid #e94560; font-size: 1.1rem; font-weight: 600;
+  color: #f1faee;
+}
+.result-box.cgpa { border-color: #457b9d; background: rgba(69,123,157,0.15); }
+.hidden { display: none; }

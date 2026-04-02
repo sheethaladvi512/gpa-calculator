@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SGPA & CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📚 GPA Calculator</h1>
+
+    <!-- SGPA Section -->
+    <section id="sgpa-section">
+      <h2>SGPA Calculator</h2>
+      <div id="subjects-container">
+        <div class="subject-row">
+          <input type="text"   placeholder="Subject Name" class="sub-name" />
+          <input type="number" placeholder="Credits"      class="sub-credits" min="1" />
+          <input type="number" placeholder="Grade (0-10)" class="sub-grade"   min="0" max="10" step="0.1"/>
+          <button class="remove-btn" onclick="removeRow(this)">✕</button>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button onclick="addSubject()">+ Add Subject</button>
+        <button onclick="calculateSGPA()">Calculate SGPA</button>
+        <button onclick="clearSGPA()">Clear</button>
+      </div>
+      <div id="sgpa-result" class="result-box hidden"></div>
+      <button id="add-to-cgpa-btn" class="hidden" onclick="addSemesterToCGPA()">
+        ➕ Add this Semester to CGPA
+      </button>
+    </section>
+
+    <hr/>
+
+    <!-- CGPA Section -->
+    <section id="cgpa-section">
+      <h2>CGPA Calculator</h2>
+      <div id="semesters-container"></div>
+      <div class="btn-group">
+        <button onclick="addManualSemester()">+ Add Semester Manually</button>
+        <button onclick="calculateCGPA()">Calculate CGPA</button>
+        <button onclick="clearCGPA()">Clear All</button>
+      </div>
+      <div id="cgpa-result" class="result-box hidden"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
